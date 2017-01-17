@@ -1,0 +1,10 @@
+version: '2'
+services:
+  server:
+    build: server
+    volumes:
+     - ./server:/code
+  client:
+    build: client
+    volumes:
+     - ./client:/code
