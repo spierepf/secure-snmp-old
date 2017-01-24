@@ -16,4 +16,5 @@ if [ ! -f /tmp/client.json ] ; then
     rm -f /root/.ssh/known_hosts.old
 fi
 
-ssh -t `jq -r .client.uuid /tmp/client.json`@$SERVER
+echo "ssh -R 2000:127.0.0.1:161 -t `jq -r .client.uuid /tmp/client.json`@$SERVER"
+echo "snmpwalk tcp:127.0.0.1:2000 -v2c -c public"
