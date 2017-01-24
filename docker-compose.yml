@@ -4,7 +4,7 @@ services:
     build: server
     volumes:
      - ./server:/code
-  client:
-    build: client
+  transmitter:
+    build: transmitter
     volumes:
-     - ./client:/code
+     - ./transmitter:/code
