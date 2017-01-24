@@ -8,3 +8,5 @@ services:
     build: transmitter
     volumes:
      - ./transmitter:/code
+  redis:
+    image: "redis:alpine"

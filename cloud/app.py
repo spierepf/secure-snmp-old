@@ -2,10 +2,12 @@ from flask import Flask, abort, jsonify, request
 import uuid
 from subprocess import call
 import os
+from redis import Redis
 
 call(["/usr/sbin/sshd"])
 
 app = Flask(__name__)
+redis = Redis(host='redis', port=6379)
 
 @app.route('/securesnmp/api/v1.0/client', methods=['POST'])
 def create_client():
@@ -20,7 +22,8 @@ def create_client():
     client = {
         'uuid': id,
         'client_public_key': request.json['client_public_key'],
-        'server_public_key': ssh_host_rsa_key
+        'server_public_key': ssh_host_rsa_key,
+        'port': 5000+redis.incr('hits')
     }
 
     call([

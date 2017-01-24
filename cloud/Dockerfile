@@ -11,5 +11,6 @@ RUN mkdir /var/run/sshd
 
 RUN apt-get install python-minimal python-setuptools python-pip -y --no-install-recommends
 RUN pip install flask
+RUN pip install redis
 
 CMD ["python", "app.py"]
