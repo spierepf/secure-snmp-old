@@ -1,9 +1,9 @@
 version: '2'
 services:
-  server:
-    build: server
+  cloud:
+    build: cloud
     volumes:
-     - ./server:/code
+     - ./cloud:/code
   transmitter:
     build: transmitter
     volumes:

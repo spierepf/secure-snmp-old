@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER=server
+SERVER=cloud
 
 #rm -f /tmp/client.json /root/.ssh/id_rsa /root/.ssh/id_rsa.pub
 
